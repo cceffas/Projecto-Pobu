@@ -1,38 +1,14 @@
-const express = require('express')
-/* const RouteSystem = require("./routes/routes") */
-const handlebars = require("express-handlebars");
-const servidor = express()
+const express = require("express");
+const RouteSystem = require("./routes/routes");
 
-/* const servdor = Handlebars.compile("defa: {{name}}");
-console.log(template({ name: "Nils" }));
- */
+const servidor = express();
 
-/* servidor.engine('handlebars', handlebars({defaultLayout: "main"}))
-servidor.set("view engine", "handlebars") */
+const Routas = new RouteSystem(servidor);
 
-servidor.engine('handlebars', handlebars({ defaultLayout: "main" }));
-servidor.set("view engine", "handlebars");
+Routas.GET("/", "index");
+Routas.GET("/home", "auth/home");
 
-/* const Routas = new RouteSystem(servidor)
-
-
-
-
-Routas.GET("/", "index")
-
-Routas.GET("/home","auth/home")
- */
-
-
-
-
-
-
-const porta = 3000
+const porta = 3000;
 servidor.listen(porta, () => {
-    console.log("Rodando...")
-})
-
-
-
-
+  console.log("projecto pobu rodano no servidor http://localhost:" + porta);
+});
