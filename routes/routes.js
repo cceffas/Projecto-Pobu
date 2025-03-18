@@ -18,26 +18,8 @@ class RouteSystem {
 
             res.sendFile(this.PATH_VIEW + view + ".html")
 
-        })
-
-    
-        
+        })  
     }
-
-
-
-   
-
-
-
 }
 
-
 module.exports = RouteSystem
-
-
-
-
-
-
-
